@@ -16,13 +16,13 @@ class TagListView(ListView):
 
 class TaskCreateView(CreateView):
     model = Task
-    fields = "__all__"
+    fields = ["content", "deadline", "is_done", "tags"]
     success_url = reverse_lazy("task-list")
 
 
 class TaskUpdateView(UpdateView):
     model = Task
-    fields = "__all__"
+    fields = ["content", "deadline", "is_done", "tags"]
     success_url = reverse_lazy("task-list")
 
 
@@ -49,7 +49,7 @@ class TagDeleteView(DeleteView):
 
 
 def toggle_task_status(request, task_id):
-    task = get_object_or_404(id=task_id)
+    task = get_object_or_404(Task, id=task_id)
     task.is_done = not task.is_done
     task.save()
     return redirect("task-list")
