@@ -3,7 +3,8 @@ from django.views import View
 
 from tasks.views import (TaskListView, TagListView,
                          TaskCreateView, TaskUpdateView, TaskDeleteView,
-                         TagCreateView, TagUpdateView, TagDeleteView,)
+                         TagCreateView, TagUpdateView, TagDeleteView,
+                         toggle_task_status, )
 
 
 urlpatterns = [
