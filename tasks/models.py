@@ -11,6 +11,9 @@ class Task(models.Model):
     def __str__(self):
         return self.content
 
+    class Meta:
+        ordering = ["is_done", "-created"]
+
 
 class Tag(models.Model):
     name = models.CharField(max_length=250, unique=True)
