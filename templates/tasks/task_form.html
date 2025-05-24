@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<b>{{ object|yesno:"Update,Create" }} task</b>
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+        <input type="submit" value="Submit">
+        </div>
+
+    </form>
+</div>
+{% endblock %}

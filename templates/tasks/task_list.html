@@ -8,9 +8,9 @@
  {% for task in task_list %}
  <p><b>{{ task.content }}</b> {% if not task.is_done %} <b style="color: red"> Not done</b>{% endif %}</p>
  {% if task.is_done %}
-  <a href="{% url 'task-toggle-status' task.id %}" class="btn btn-warning btn-sm">Undo</a>
+  <a href="{% url 'task-toggle' task.id %}" class="btn btn-warning btn-sm">Undo</a>
  {% else %}
-  <a href="{% url 'task-toggle-status' task.id %}" class="btn btn-success btn-sm">Complete</a>
+  <a href="{% url 'task-toggle' task.id %}" class="btn btn-success btn-sm">Complete</a>
  {% endif %}
 
   <p>Created: {{ task.created }}</p>
